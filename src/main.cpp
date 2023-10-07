@@ -24,6 +24,7 @@ void translateIR() // takes action based on IR code received
     {
         // describing Remote IR codes
         case 0xFFFFFFFF: Serial.println(" REPEAT"); break;
+        // Frigidaire FRA12HT2
         case 0x10AF8877: FRA12HT2("POWER"); break;
         case 0x10AF708F: FRA12HT2("TEMP/TIMER UP"); break;
         case 0x10AFB04F: FRA12HT2("TEMP/TIMER DWN"); break;
@@ -37,6 +38,16 @@ void translateIR() // takes action based on IR code received
         case 0x10AF609F: FRA12HT2("TIMER"); break;
         case 0x10AFF53B: FRA12HT2("REMOTE SENSING ON"); break;
         case 0x10AFF708: FRA12HT2("REMOTE SENSING OFF"); break;
+        // Genuine Comfort GCTTW-12CRA2
+        case 0x80FF48B7: GCTTW_12CRA2("POWER"); break;
+        case 0x80FF58A7: GCTTW_12CRA2("UP"); break;
+        case 0x80FFC837: GCTTW_12CRA2("DOWN"); break;
+        case 0x80FF40BF: GCTTW_12CRA2("MODE"); break;
+        case 0x80FF50AF: GCTTW_12CRA2("SLEEP"); break;
+        case 0x80FF708F: GCTTW_12CRA2("SPEED"); break;
+        case 0x80FFD827: GCTTW_12CRA2("TIMER"); break;
+        case 0x80FF6897: GCTTW_12CRA2("ONE TOUCH"); break;
+        case 0x80FFF00F: GCTTW_12CRA2("ENERGY SAVER"); break;
 
         default:
             Serial.print(" other input  ");
