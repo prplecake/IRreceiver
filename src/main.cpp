@@ -2,8 +2,6 @@
 #include "../lib/IRremote/IRremote.h"
 #include "units.h"
 
-#define DHT_SENSOR_TYPE DHT_TYPE_11
-
 // Initialize pins
 static const int IR_RECEIVER_PIN = 3;
 
