@@ -25,19 +25,15 @@ void translateIR() // takes action based on IR code received
     {
         // describing Remote IR codes
         case 0xFFFFFFFF: Serial.println(" REPEAT");break;
-        case 0x10AF8877: Serial.println("POWER"); break;
-        case 0x10AF708F: Serial.println("TEMP/TIMER UP"); break;
-        case 0x10AFB04F: Serial.println("TEMP/TIMER DWN"); break;
-        case 0x10AF807F: Serial.println("FAN SPEED+"); break;
-        case 0x10AF20DF: Serial.println("FAN SPEED-"); break;
-        case 0x10AF906F: Serial.println("COOL"); break;
-        case 0x10AF40BF: Serial.println("ENERGY SAVER"); break;
-        case 0x10AFE01F: Serial.println("FAN ONLY"); break;
-        case 0x10AF00FF: Serial.println("SLEEP"); break;
-        case 0x10AFF00F: Serial.println("AUTO FAN"); break;
-        case 0x10AF609F: Serial.println("TIMER"); break;
-        case 0x10AFF53B: Serial.println("REMOTE SENSING ON"); break;
-        case 0x10AFF708: Serial.println("REMOTE SENSING OFF"); break;
+        case 0x80FF48B7: Serial.println("POWER"); break;
+        case 0x80FF58A7: Serial.println("UP"); break;
+        case 0x80FFC837: Serial.println("DOWN"); break;
+        case 0x80FF40BF: Serial.println("MODE"); break;
+        case 0x80FF50AF: Serial.println("SLEEP"); break;
+        case 0x80FF708F: Serial.println("SPEED"); break;
+        case 0x80FFD827: Serial.println("TIMER"); break;
+        case 0x80FF6897: Serial.println("ONE TOUCH"); break;
+        case 0x80FFF00F: Serial.println("ENERGY SAVER"); break;
 
         default:
             Serial.print(" other input  ");
