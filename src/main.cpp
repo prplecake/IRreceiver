@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "../lib/IRremote/IRremote.h"
+#include "units.h"
 
 #define DHT_SENSOR_TYPE DHT_TYPE_11
 
@@ -24,20 +25,20 @@ void translateIR() // takes action based on IR code received
     switch(results.value)
     {
         // describing Remote IR codes
-        case 0xFFFFFFFF: Serial.println(" REPEAT");break;
-        case 0x10AF8877: Serial.println("POWER"); break;
-        case 0x10AF708F: Serial.println("TEMP/TIMER UP"); break;
-        case 0x10AFB04F: Serial.println("TEMP/TIMER DWN"); break;
-        case 0x10AF807F: Serial.println("FAN SPEED+"); break;
-        case 0x10AF20DF: Serial.println("FAN SPEED-"); break;
-        case 0x10AF906F: Serial.println("COOL"); break;
-        case 0x10AF40BF: Serial.println("ENERGY SAVER"); break;
-        case 0x10AFE01F: Serial.println("FAN ONLY"); break;
-        case 0x10AF00FF: Serial.println("SLEEP"); break;
-        case 0x10AFF00F: Serial.println("AUTO FAN"); break;
-        case 0x10AF609F: Serial.println("TIMER"); break;
-        case 0x10AFF53B: Serial.println("REMOTE SENSING ON"); break;
-        case 0x10AFF708: Serial.println("REMOTE SENSING OFF"); break;
+        case 0xFFFFFFFF: Serial.println(" REPEAT"); break;
+        case 0x10AF8877: FRA12HT2("POWER"); break;
+        case 0x10AF708F: FRA12HT2("TEMP/TIMER UP"); break;
+        case 0x10AFB04F: FRA12HT2("TEMP/TIMER DWN"); break;
+        case 0x10AF807F: FRA12HT2("FAN SPEED+"); break;
+        case 0x10AF20DF: FRA12HT2("FAN SPEED-"); break;
+        case 0x10AF906F: FRA12HT2("COOL"); break;
+        case 0x10AF40BF: FRA12HT2("ENERGY SAVER"); break;
+        case 0x10AFE01F: FRA12HT2("FAN ONLY"); break;
+        case 0x10AF00FF: FRA12HT2("SLEEP"); break;
+        case 0x10AFF00F: FRA12HT2("AUTO FAN"); break;
+        case 0x10AF609F: FRA12HT2("TIMER"); break;
+        case 0x10AFF53B: FRA12HT2("REMOTE SENSING ON"); break;
+        case 0x10AFF708: FRA12HT2("REMOTE SENSING OFF"); break;
 
         default:
             Serial.print(" other input  ");
